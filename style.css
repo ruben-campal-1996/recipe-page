@@ -1,0 +1,191 @@
+/* ----CONFIGURACIÓN INICIAL---- */
+*{
+    /* Nunca poner min-width aqui, por si hay scroll horizontal, Recomendación IA */
+    margin: 0;  /* Ajuste sin bordes para ser preciso con la imagen */
+    padding: 0; /* Ajuste sin bordes para ser preciso con la imagen */
+    box-sizing: border-box; /* Ajusta el contenido, evita que padding o border sumen ancho extra al elemento */
+}
+
+h1, h2 {
+    font-family: 'Young Serif', sans-serif;
+    
+}
+
+.contenedor, .h2-preparation {
+    width: 100%;
+    max-width: 736px; /* Ancho típico de este reto */
+    margin: 0 auto;
+    font-family: 'Outfit', sans-serif;
+}
+
+.omelette{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* ----AJUSTE DE TEXTOS---- */ 
+
+h1{
+    color: hsl(24, 5%, 18%);
+    width: 80%;
+    margin: 30px;
+    text-align: left;  
+    font-weight: 300;
+}
+
+h2{
+    padding-left: 29px;
+    font-weight: 100;
+}
+
+.h2-preparation{
+    text-align: left;
+    padding: 0px;
+}
+
+p{
+    text-align: left;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-bottom: 20px;
+}
+
+/* ----AJUSTE HR---- */
+
+hr{
+    border: none;       /* En realidad, es un recuadro muy fino, lo quitamos para ahorrarnos problemas */
+    border-top: 2px solid hsla(0, 1%, 55%, 0.2);        /* Hacemos visible una parte */
+    margin: 20px 30px 20px 30px;        /* Ahorro de código manejando los 4 ejes, Arriba, Derecha, Abajo, Izquierda */
+}
+
+
+ /* ----AJUSTE DE DIV PREPARATION LIST---- */ 
+
+ /* Yo trabajé con porcentajes haciendo un montón de Width junto a padding-left para poder alinearlo al gusto
+ Me pareció raro y la IA me sugirió generalizarlo, lo apliqué a mi manera (p, preparation,
+  .ingredients, .instructions. Revisar */
+
+.preparation {
+    background-color: hsl(330, 100%, 98%);
+    margin: 32px;        
+    padding: 24px;       
+    border-radius: 12px;
+}
+
+.preparation-list{
+    width: 90%;
+    padding-left: 40px;
+      
+}
+
+.preparation li{
+    padding: 5px;
+}
+
+/* ----AJUSTE DE TEXTOS, ESPACIADOS TITULOS Y LISTAS---- */ 
+.ingredients, .instructions{
+    margin-left: 32px;   /* Usamos margen para alinear la lista entera al raíl */
+    margin-right: 32px;
+    padding-left: 20px;
+}
+
+.ingredients li, .instructions li{
+    padding: 10px;
+}
+
+.instructions li:last-child {
+    margin-bottom: 40px;
+}
+
+/* ---- AJUSTE TABLA ---- */
+/* NO USAR FLEX CON TABLAS, PIERDE SU PROPIEDAD */
+.nutrition {
+    width: 80%;                 /* Ocupa casi todo el ancho */
+    margin: 20px auto;      
+    border-collapse: collapse;  /* IMPORTANTE para unificar las filas  */
+    table-layout: fixed;        /* Forzamos a la tabla a respetar anchos */
+}
+
+.nutrition caption {
+    text-align: left;
+    
+}
+
+.nutrition td, .nutrition th {
+    
+    text-align: left;
+    padding: 12px 0px;
+    border-bottom: 1px solid hsla(0, 1%, 55%, 0.4);
+}
+
+.nutrition td {
+    padding-left: 10px
+}
+
+.nutrition th{
+    padding-left: 25px
+}
+
+.nutrition tr:last-child th, .nutrition tr:last-child td {  /* Quitar línea columna final */
+    border-bottom: none;
+}
+
+/* -------------------------AJUSTES GENERALES DE COLORES------------------------- */ 
+
+
+.ingredients li::marker, .instructions li::marker, .nutrition li::marker, h2, table td{
+    color: hsl(14, 45%, 36%);
+    font-weight: bold;
+}
+
+.h2-preparation, .preparation-list li::marker{
+    color: hsl(332, 51%, 32%);
+}
+
+p, li, caption, .nutrition th {
+    color: hsl(30, 10%, 34%)
+} 
+
+/* ----MEDIAQUERIE DESKTOP---- */
+
+@media (min-width: 756px){
+    h1{
+        font-size: 40px;
+    }
+    
+    body{
+        background-color: hsl(30, 54%, 90%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+
+    .nutrition td {
+        padding-left: 35px;
+    }
+    
+    
+    .contenedor {
+        background-color: rgb(255, 255, 255);
+        padding: 40px;
+        border-radius: 24px;
+    }
+    
+    
+    .omelette{
+        border-radius: 12px;
+        margin-bottom: 40px;
+    }
+    
+    .nutrition {
+        width: 100%;
+    }
+    
+    .nutrition caption{
+        padding: 0px 0px 16px 30px;   /* Separación de datos */
+    }
+
+
+}
